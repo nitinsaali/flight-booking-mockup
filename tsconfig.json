@@ -8,6 +8,12 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "paths": {
+      "tab-factory": [
+        "dist/tab-factory/tab-factory",
+        "dist/tab-factory"
+      ]
+    },
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",

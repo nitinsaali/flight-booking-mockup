@@ -122,6 +122,46 @@
           }
         }
       }
+    },
+    "tab-factory": {
+      "projectType": "library",
+      "root": "projects/tab-factory",
+      "sourceRoot": "projects/tab-factory/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/tab-factory/tsconfig.lib.json",
+            "project": "projects/tab-factory/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/tab-factory/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tab-factory/src/test.ts",
+            "tsConfig": "projects/tab-factory/tsconfig.spec.json",
+            "karmaConfig": "projects/tab-factory/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tab-factory/tsconfig.lib.json",
+              "projects/tab-factory/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "flight-booking-mockup"

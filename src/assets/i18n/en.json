@@ -1,0 +1,30 @@
+{
+    "Departure": "Departure",
+    "Destination": "Destination",
+    "Depart Date": "Depart Date",
+    "Return Date": "Return Date",
+    "Travellers": "Travellers",
+    "Class": "Class",
+    "Search": "Search",
+
+    "Flights": "Flights",
+    "Hotels": "Hotels",
+    "Car": "Car",
+    "Activity": "Activity",
+    
+    "Price Range": "Price Range",
+    "Min": "Min",
+    "Max": "Max",
+    "Sort By": "Sort By",
+    "Airline (A - Z)": "Airline (A - Z)",
+    "Airline (Z - A)": "Airline (Z - A)",
+    "Price (Lowest to Highest)": "Price (Lowest to Highest)",
+    "Price (Highest to Lowest)": "Price (Highest to Lowest)",
+    "Duration (Shortest to Longest)": "Duration (Shortest to Longest)",
+    "Duration (Longest to Shortest)": "Duration (Longest to Shortest)",
+    "Back": "Back",
+    "No Flights Found": "No Flights Found",
+    "Seats": "Seats",
+    "Available": "Available",
+    "Duration": "Duration"
+}

@@ -1,0 +1,14 @@
+<lib-tab-factory [tabs]="tabs" (tabClicked)="tabClicked($event)">
+    <ng-container *ngIf="selectedTab === 'flights'">
+        <app-flights-search></app-flights-search>
+    </ng-container>
+    <ng-container *ngIf="selectedTab === 'hotels'">
+        <p>Hotels</p>
+    </ng-container>
+    <ng-container *ngIf="selectedTab === 'car'">
+        <p>Car</p>
+    </ng-container>
+    <ng-container *ngIf="selectedTab === 'activity'">
+        <p>Activity</p>
+    </ng-container>
+</lib-tab-factory>

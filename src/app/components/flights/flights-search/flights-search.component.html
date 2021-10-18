@@ -1,0 +1,51 @@
+<form [formGroup]="form">
+<div class="row">
+    <div class="col">
+        <div class="form-floating mb-10">
+            <select class="form-select form-select-sm" formControlName="departure">
+                <option *ngFor="let location of locations" [value]="location.id">{{ location.name }}</option>
+            </select>
+            <label class="custom-label" for="departure">{{'Departure' | translate}}</label>
+        </div>
+
+        <div class="form-floating mb-10">
+            <input type="date" class="form-control form-control-sm" formControlName="departDate"/>
+            <label class="custom-label" for="depart date">{{'Depart Date' | translate}}</label>
+        </div>
+    </div>
+    <div class="col">
+        <div class="form-floating mb-10">
+            <select class="form-select form-select-sm" formControlName="destination">
+                <option *ngFor="let location of locations" [value]="location.id">{{ location.name }}</option>
+            </select>
+            <label class="custom-label" for="destination">{{'Destination' | translate}}</label>
+        </div>
+
+        <div class="form-floating mb-10">
+            <input type="date" class="form-control form-control-sm" formControlName="returnDate"/>
+            <label class="custom-label" for="return date">{{'Return Date' | translate}}</label>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="form-floating mb-10">
+            <input type="number" class="form-control form-control-sm" formControlName="travellers"/>
+            <label class="custom-label" for="travellers">{{'Travellers' | translate}}</label>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="form-floating mb-10">
+            <select class="form-select form-select-sm" formControlName="class">
+                <option *ngFor="let class of stdClass" [value]="class.id">{{ class.name }}</option>
+            </select>
+            <label class="custom-label" for="class">{{'Class' | translate}}</label>
+        </div>
+    </div>
+  </div>
+</form>
+  <div class="row center">
+      <button [disabled]="form.invalid" class="btn btn-lg btn-outline-info" 
+        (click)="searchFlights()"
+        >{{ 'Search' | translate }}</button>
+  </div>

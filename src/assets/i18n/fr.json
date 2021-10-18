@@ -1,0 +1,30 @@
+{
+    "Departure": "Départ",
+    "Destination": "Destination",
+    "Depart Date": "Date de départ",
+    "Return Date": "Date de retour",
+    "Travellers": "voyageuses",
+    "Class": "classer",
+    "Search": "Chercher",
+
+    "Flights": "Vols",
+    "Hotels": "Hôtels",
+    "Car": "Auto",
+    "Activity": "Activité",
+
+    "Price Range": "Échelle des prix",
+    "Min": "Min",
+    "Max": "Max",
+    "Sort By": "Trier par",
+    "Airline (A - Z)": "Compagnie aérienne (A - Z)",
+    "Airline (Z - A)": "Compagnie aérienne (Z - A)",
+    "Price (Lowest to Highest)": "Prix ​​(du plus bas au plus élevé)",
+    "Price (Highest to Lowest)": "Prix ​​(du plus haut au plus bas)",
+    "Duration (Shortest to Longest)": "Durée (de la plus courte à la plus longue)",
+    "Duration (Longest to Shortest)": "Durée (de la plus longue à la plus courte)",
+    "Back": "Arrière",
+    "No Flights Found": "Aucun vol trouvé",
+    "Seats": "Seats",
+    "Available": "Available",
+    "Duration": "Durée"
+}

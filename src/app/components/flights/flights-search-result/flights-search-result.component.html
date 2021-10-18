@@ -1,0 +1,93 @@
+
+<div class="text-center">
+        <label class="text-bold">Departure</label>:
+        <label class="">{{ searchCriteria.departure }}</label>
+        | 
+        <label class="text-bold">Destination</label>:
+        <label class="">{{ searchCriteria.destination }}</label>
+        | 
+        <label class="text-bold">Depart Date</label>:
+        <label class="">{{ searchCriteria.departDate }}</label>
+        | 
+        <label class="text-bold">Return Date</label>:
+        <label class="">{{ searchCriteria.returnDate }}</label>
+        | 
+        <label class="text-bold">Travellers</label>:
+        <label class="">{{ searchCriteria.travellers }}</label>
+        | 
+        <label class="text-bold">Class</label>:
+        <label class="">{{ searchCriteria.class }}</label>
+</div>
+<div class="main">
+    <nav class="sidebar">
+        {{ 'Price Range' | translate }}
+        <input type="range" [min]="minPrice" [max]="maxPrice" [formControl]="priceRange">
+        {{ 'Min' | translate }} {{ minPrice }} - {{ 'Max' | translate }} {{ priceRange.value }}
+
+        <p>{{ 'Sort By' | translate }}:</p>
+            <input type="radio" name="sort" value="ATOZ" (change)="handleChange($event)" >
+            <label for="airline">{{'Airline (A - Z)' | translate }}</label><br>
+            <input type="radio" name="sort" value="ZTOA" (change)="handleChange($event)">
+            <label for="airline">{{'Airline (Z - A)' | translate }}</label><br>
+
+            <input type="radio" name="sort" value="LTOH" (change)="handleChange($event)">
+            <label for="price">{{'Price (Lowest to Highest)' | translate}}</label><br>
+
+            <input type="radio" name="sort" value="HTOL" (change)="handleChange($event)">
+            <label for="price">{{'Price (Highest to Lowest)' | translate}}</label><br>
+
+            <input type="radio" name="sort" value="STOL" (change)="handleChange($event)">
+            <label for="price">{{'Duration (Shortest to Longest)' | translate}}</label><br>
+
+            <input type="radio" name="sort" value="LTOS" (change)="handleChange($event)">
+            <label for="price">{{'Duration (Longest to Shortest)' | translate}}</label><br>
+    </nav>
+
+    
+    <div class="content">
+        <div class="card" *ngIf="flights.length == 0">
+            <div class="">{{'No Flights Found' | translate}}</div>
+        </div>
+        
+        <div class="card" *ngFor="let flight of flights">
+            <div class="item">
+                <div class="logo">
+                    <img [src]="'../../../../assets/'+flight.logo" />
+                </div>
+                <span class="name">{{ flight.name }}</span>
+            </div>
+            
+            <div class="price-cards">
+                <div class="price-card">
+                    <div class="name">{{ flight.timeStart }}</div>
+                    <div class="class-name">{{ flight.from }}</div>
+                </div>
+                <div class="price-card">
+                    <div class="name">{{ flight.timeEnd }}</div>
+                    <div class="class-name">{{ flight.to }}</div>
+                </div>
+            </div>
+            
+            <div class="price-cards duration-cards">
+                <div class="price-card duration-card">
+                    <div class="name">{{ flight.duration | msToTime }}</div>
+                    <div class="">{{'Duration' | translate }}</div>
+                </div>
+            </div>
+            <div class="price-cards">
+                <div class="price-card" *ngFor="let price of flight.prices">
+                    <div class="name">₹{{ price.price }}</div>
+                    <div class="class-name">{{ price.name | titlecase }}</div>
+                    <div class="badge bg-green">{{'Seats' | translate }} {{ price.seats }} {{'Available' | translate}}</div>
+                </div>
+            </div>
+          </div>
+        
+          <div class="row">
+            <button class="btn btn-lg btn-outline-info" 
+              (click)="back()"
+              >{{'Back' | translate}}</button>
+        </div>
+    </div>
+</div>
+
